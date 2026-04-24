@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title id="meta-title">Excellence Academy — Shaping Tomorrow's Leaders</title>
+  <meta name="description" id="meta-desc" content="A premier Nigerian school dedicated to academic excellence, character development, and holistic education." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green: #1A6B45;
+      --green-mid: #25925F;
+      --green-light: #E8F5EE;
+      --green-xlight: #F3FBF7;
+      --gold: #C8972A;
+      --gold-light: #FDF6E3;
+      --cream: #FDFAF5;
+      --white: #FFFFFF;
+      --ink: #0D1B12;
+      --ink-mid: #2D4037;
+      --ink-light: #5A7468;
+      --border: #D8E8DE;
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --shadow-sm: 0 2px 8px rgba(26,107,69,0.07);
+      --shadow-md: 0 12px 32px rgba(26,107,69,0.12);
+      --shadow-lg: 0 24px 60px rgba(13,27,18,0.15);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --nav-h: 76px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─── IMAGE UTILITIES ─── */
+    .img-fluid {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .img-wrapper {
+      background: var(--green-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .img-ratio-portrait { aspect-ratio: 4/5; }
+    .img-ratio-landscape { aspect-ratio: 4/3; }
+    .img-ratio-square { aspect-ratio: 1/1; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--nav-h);
+      background: rgba(253,250,245,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(216,232,222,0.8);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-emblem {
+      width: 44px; height: 44px;
+      background: var(--green);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(26,107,69,0.2);
+    }
+
+    .nav-emblem svg { width: 24px; height: 24px; fill: none; }
+
+    .nav-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.1;
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-name .sub {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-top: 2px;
+    }
+
+    .nav-spacer { flex: 1; }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (min-width: 860px) {
+      .nav-links { display: flex; }
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--green); }
+
+    .nav-cta {
+      display: none;
+      background: var(--green);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(26,107,69,0.2);
+    }
+
+    .nav-cta:active { transform: scale(0.96); }
+    .nav-cta:hover { background: var(--green-mid); box-shadow: 0 6px 16px rgba(26,107,69,0.3); }
+
+    @media (min-width: 640px) { .nav-cta { display: inline-flex; } }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      padding: 8px;
+      background: none; border: none;
+    }
+
+    @media (min-width: 860px) { .hamburger { display: none; } }
+
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transform: translateY(-120%);
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+      z-index: 199;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .mobile-menu.open { transform: translateY(0); }
+
+    .mobile-menu a {
+      display: block;
+      padding: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .mobile-menu a:hover, .mobile-menu a.active {
+      background: var(--green-xlight);
+      color: var(--green);
+    }
+
+    .mobile-menu .mm-cta {
+      margin-top: 16px;
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 16px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .mobile-menu .mm-cta:hover { background: var(--green-mid); }
+
+    /* ─── PAGES ─── */
+    .page {
+      display: none;
+      min-height: 100vh;
+      opacity: 0;
+      animation: fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+
+    .page.active { display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── HERO (Image-backed) ─── */
+    .hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 80px;
+      text-align: center;
+      background-color: var(--green);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    /* Specific Hero Backgrounds */
+    #page-home .hero { background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1920'); }
+    #page-about .hero { background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1920'); }
+    #page-academics .hero { background-image: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=1920'); }
+    #page-admissions .hero { background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1920'); }
+    #page-contact .hero { background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1920'); }
+
+    /* Dark Overlay for text readability */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(13,27,18,0.5) 0%, rgba(26,107,69,0.85) 100%);
+      z-index: 1;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; width: 100%; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #FFFFFF;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: #FFFFFF;
+      margin-bottom: 24px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+      margin-bottom: 40px;
+      font-weight: 400;
+      max-width: 700px;
+      margin-inline: auto;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border-radius: 100px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .btn:active { transform: scale(0.96); }
+
+    .btn-white {
+      background: white;
+      color: var(--green);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover { background: var(--cream); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
+
+    .btn-outline-white {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      color: white;
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); border-color: white; }
+
+    .btn-green {
+      background: var(--green);
+      color: white;
+      box-shadow: 0 8px 20px rgba(26,107,69,0.3);
+    }
+    .btn-green:hover { background: var(--green-mid); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(26,107,69,0.4); }
+
+    .btn-outline-green {
+      background: transparent;
+      color: var(--green);
+      border: 2px solid var(--green);
+    }
+    .btn-outline-green:hover { background: var(--green-xlight); transform: translateY(-3px); }
+
+    /* Hero stats */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    @media (min-width: 640px) { .hero-stats { gap: 64px; } }
+
+    .h-stat { text-align: center; }
+
+    .h-stat-num {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--gold);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .h-stat-lbl {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.85);
+      text-transform: uppercase;
+    }
+
+    /* ─── SECTIONS & GRIDS ─── */
+    section { padding: 96px 24px; }
+    .bg-alt { background: var(--white); }
+
+    .inner { max-width: 1200px; margin: 0 auto; }
+    .inner-narrow { max-width: 900px; margin: 0 auto; }
+
+    .grid-half {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 860px) {
+      .grid-half { grid-template-columns: 1fr 1fr; gap: 64px; }
+      .grid-half.reverse { direction: rtl; }
+      .grid-half.reverse > * { direction: ltr; }
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    h2.section-title em { font-style: italic; color: var(--green); }
+
+    .section-lead {
+      font-size: 1.15rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+
+    /* ─── PILLARS / CARDS ─── */
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 640px) { .pillars { grid-template-columns: 1fr 1fr; } }
+
+    .pillar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-5px);
+      border-color: var(--green-light);
+    }
+
+    .pillar-icon {
+      width: 56px; height: 56px;
+      background: var(--green-xlight);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .pillar-icon svg { width: 28px; height: 28px; stroke: var(--green); fill: none; }
+
+    .pillar h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .pillar p {
+      font-size: 1rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+
+    /* Accent block (Image backed quote) */
+    .accent-block {
+      background: var(--green) url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1600') center/cover;
+      border-radius: var(--radius-lg);
+      padding: 80px 40px;
+      color: white;
+      margin-top: 64px;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .accent-block::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(26,107,69,0.85); /* Green overlay */
+    }
+
+    .accent-block > * { position: relative; z-index: 2; }
+
+    .accent-block blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-style: italic;
+      line-height: 1.3;
+      margin-bottom: 24px;
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    .accent-block cite {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-style: normal;
+    }
+
+    /* ─── IMAGE CARDS (Academics/Leadership) ─── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+    @media (min-width: 768px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+
+    .img-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .img-card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); }
+
+    .img-card .img-wrapper {
+      border-radius: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .img-card-body { padding: 32px; }
+    
+    .img-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    
+    .img-card p {
+      font-size: 1rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--green-light);
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Subjects grid */
+    .subjects { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--border); }
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    @media (min-width: 640px) { .subject-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 900px) { .subject-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .subject-item {
+      background: var(--green-xlight);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-mid);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s;
+    }
+    .subject-item:hover { background: var(--green-light); border-color: var(--green); transform: translateY(-2px); }
+
+    .subject-item::before {
+      content: '';
+      display: block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ─── ADMISSIONS STEPS ─── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      left: 28px; top: 28px; bottom: 28px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+
+    .step:last-child { padding-bottom: 0; }
+
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ink-light);
+      flex-shrink: 0;
+      z-index: 1;
+      transition: all 0.3s;
+    }
+
+    .step.done .step-num {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+      box-shadow: 0 4px 12px rgba(26,107,69,0.2);
+    }
+
+    .step-content { padding-top: 10px; }
+    .step-content h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .step-content p { font-size: 1rem; color: var(--ink-light); line-height: 1.6; }
+
+    /* ─── FEES ─── */
+    .fees-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (min-width: 640px) { .fees-grid { grid-template-columns: 1fr 1fr; } }
+
+    .fee-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      transition: all 0.3s;
+    }
+    .fee-card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); }
+
+    .fee-card.featured {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+      transform: scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+    .fee-card.featured:hover { transform: scale(1.02) translateY(-5px); }
+
+    .fee-level { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 12px; }
+    .fee-card.featured .fee-level { color: rgba(255,255,255,0.8); }
+
+    .fee-amount { font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .fee-card.featured .fee-amount { color: white; }
+
+    .fee-period { font-size: 0.9rem; color: var(--ink-light); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .fee-card.featured .fee-period { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2); }
+
+    .fee-includes { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .fee-includes li { font-size: 0.95rem; color: var(--ink-light); display: flex; align-items: flex-start; gap: 12px; }
+    .fee-card.featured .fee-includes li { color: rgba(255,255,255,0.9); }
+
+    .fee-includes li::before {
+      content: '✓';
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green);
+      background: var(--green-light);
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .fee-card.featured .fee-includes li::before { color: var(--green); background: white; }
+
+    /* ─── CONTACT ─── */
+    .contact-info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .contact-item:first-child { padding-top: 0; }
+
+    .contact-icon {
+      width: 48px; height: 48px;
+      background: var(--green-xlight);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 22px; height: 22px; stroke: var(--green); fill: none; }
+
+    .contact-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 6px; }
+    .contact-value { font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1.5; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 80px 24px 40px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 1fr; gap: 48px; margin-bottom: 64px; }
+    @media (min-width: 768px) { .footer-top { grid-template-columns: 2fr 1fr 1fr; } }
+
+    .footer-brand .logo { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: white; margin-bottom: 16px; }
+    .footer-brand p { font-size: 1rem; line-height: 1.7; max-width: 400px; }
+
+    .footer-links h4 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: white; margin-bottom: 20px; }
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { font-size: 0.95rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; text-align: center; font-size: 0.9rem; }
+
+    /* ─── LOADING STATE ─── */
+    #loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--cream);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      transition: opacity 0.4s;
+    }
+    #loading-overlay.hidden { opacity: 0; pointer-events: none; }
+    .loader-emblem {
+      width: 72px; height: 72px;
+      background: var(--green);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      animation: pulse 1.4s ease-in-out infinite;
+      box-shadow: var(--shadow-md);
+    }
+    .loader-emblem svg { width: 36px; height: 36px; fill: none; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(0.92); opacity: 0.8; }
+    }
+    #loading-overlay p { font-size: 1rem; font-weight: 600; color: var(--ink-light); }
+
+    .text-center { text-align: center; }
+    [id] { scroll-margin-top: calc(var(--nav-h) + 24px); }
+    .nav-links a, .mobile-menu a { cursor: pointer; }
+
+    /* Profile images for team */
+    .profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 4px solid var(--green-light); }
+  </style>
+</head>
+<body>
+
+<!-- Loading -->
+<div id="loading-overlay">
+  <div class="loader-emblem">
+    <svg viewBox="0 0 24 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+  </div>
+  <p id="loading-text">Preparing experience…</p>
+</div>
+
+<!-- Navigation -->
+<nav>
+  <a href="#home" class="nav-logo" onclick="navigate('home')">
+    <div class="nav-emblem">
+      <svg viewBox="0 0 24 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="nav-name">
+      <span id="nav-school-name">Excellence Academy</span>
+      <span class="sub">Est. Since Excellence</span>
+    </div>
+  </a>
+
+  <div class="nav-spacer"></div>
+
+  <ul class="nav-links">
+    <li><a href="#home" onclick="navigate('home')">Home</a></li>
+    <li><a href="#about" onclick="navigate('about')">About</a></li>
+    <li><a href="#academics" onclick="navigate('academics')">Academics</a></li>
+    <li><a href="#admissions" onclick="navigate('admissions')">Admissions</a></li>
+    <li><a href="#contact" onclick="navigate('contact')">Contact</a></li>
+  </ul>
+
+  <a href="#admissions" class="nav-cta" onclick="navigate('admissions')">Apply Now</a>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#home" onclick="navigate('home');closeMobileMenu()">Home</a>
+  <a href="#about" onclick="navigate('about');closeMobileMenu()">About</a>
+  <a href="#academics" onclick="navigate('academics');closeMobileMenu()">Academics</a>
+  <a href="#admissions" onclick="navigate('admissions');closeMobileMenu()">Admissions</a>
+  <a href="#contact" onclick="navigate('contact');closeMobileMenu()">Contact</a>
+  <a href="#admissions" class="mm-cta" onclick="navigate('admissions');closeMobileMenu()">Apply Now →</a>
+</div>
+
+<!-- ═══════════════ PAGE: HOME ═══════════════ -->
+<div class="page" id="page-home">
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Premier Nigerian School
+      </div>
+      <h1>Raising <em>Leaders</em><br/>of Tomorrow</h1>
+      <p>At <span class="school-name-inline">Excellence Academy</span>, we nurture young minds with world-class education, strong values, and the confidence to thrive in a rapidly changing world.</p>
+      <div class="hero-actions">
+        <a href="#admissions" class="btn btn-green" onclick="navigate('admissions')">Apply for Admission</a>
+        <a href="#about" class="btn btn-outline-white" onclick="navigate('about')">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat">
+          <span class="h-stat-num">98%</span>
+          <span class="h-stat-lbl">Pass Rate</span>
+        </div>
+        <div class="h-stat">
+          <span class="h-stat-num">1,200+</span>
+          <span class="h-stat-lbl">Students</span>
+        </div>
+        <div class="h-stat">
+          <span class="h-stat-num">25+</span>
+          <span class="h-stat-lbl">Years</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us (Image Left, Text Right) -->
+  <section class="bg-alt">
+    <div class="inner grid-half">
+      <div class="img-wrapper img-ratio-portrait">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" alt="Students in classroom" class="img-fluid" loading="lazy" />
+      </div>
+      <div>
+        <div class="section-tag">Why Us</div>
+        <h2 class="section-title">Education That <em>Endures</em></h2>
+        <p class="section-lead">We go beyond textbooks — shaping character, building community, and igniting a lifelong love for learning through practical experience.</p>
+
+        <div class="pillars" style="grid-template-columns: 1fr; gap: 20px;">
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div class="pillar-icon" style="width:48px;height:48px;margin:0;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div>
+              <h3 style="font-size:1.2rem;margin-bottom:6px;">Academic Excellence</h3>
+              <p style="font-size:0.95rem;">Consistent top performance in national exams with graduates securing places in premium universities.</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div class="pillar-icon" style="width:48px;height:48px;margin:0;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3 style="font-size:1.2rem;margin-bottom:6px;">Holistic Development</h3>
+              <p style="font-size:0.95rem;">Sports, arts, clubs, and leadership programmes cultivate well-rounded individuals ready for life.</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div class="pillar-icon" style="width:48px;height:48px;margin:0;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <h3 style="font-size:1.2rem;margin-bottom:6px;">Modern Facilities</h3>
+              <p style="font-size:0.95rem;">State-of-the-art ICT labs, stocked libraries, and spacious classrooms supporting 21st-century learning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accent Block / Quote -->
+  <section style="padding-top:0;">
+    <div class="inner">
+      <div class="accent-block">
+        <blockquote>"The goal of education is not to fill a bucket, but to light a fire — and at <span class="school-name-inline">Excellence Academy</span>, we light fires every day."</blockquote>
+        <cite>— School Principal</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links Grid -->
+  <section class="bg-alt">
+    <div class="inner text-center">
+      <div class="section-tag" style="justify-content:center;">Explore</div>
+      <h2 class="section-title">Everything You Need</h2>
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <a href="#academics" class="pillar" style="text-decoration:none;cursor:pointer;" onclick="navigate('academics')">
+          <div class="pillar-icon" style="margin:0 auto 16px;">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <h3 style="font-size:1.2rem;text-align:center;">Our Academics</h3>
+        </a>
+        <a href="#admissions" class="pillar" style="text-decoration:none;cursor:pointer;" onclick="navigate('admissions')">
+          <div class="pillar-icon" style="margin:0 auto 16px;">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 style="font-size:1.2rem;text-align:center;">Admissions</h3>
+        </a>
+        <a href="#about" class="pillar" style="text-decoration:none;cursor:pointer;" onclick="navigate('about')">
+          <div class="pillar-icon" style="margin:0 auto 16px;">
+            <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 style="font-size:1.2rem;text-align:center;">About School</h3>
+        </a>
+        <a href="#contact" class="pillar" style="text-decoration:none;cursor:pointer;" onclick="navigate('contact')">
+          <div class="pillar-icon" style="margin:0 auto 16px;">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 style="font-size:1.2rem;text-align:center;">Contact Us</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo school-name-inline">Excellence Academy</div>
+          <p>Committed to academic excellence, moral integrity, and the total development of every child in our care.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="#home" onclick="navigate('home')">Home</a></li>
+            <li><a href="#about" onclick="navigate('about')">About</a></li>
+            <li><a href="#academics" onclick="navigate('academics')">Academics</a></li>
+            <li><a href="#admissions" onclick="navigate('admissions')">Admissions</a></li>
+            <li><a href="#contact" onclick="navigate('contact')">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+2348012345678">+234 801 234 5678</a></li>
+            <li><a href="mailto:info@school.edu.ng">info@school.edu.ng</a></li>
+            <li><a href="#contact" onclick="navigate('contact')">Find Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year-home"></span> <span class="school-name-inline">Excellence Academy</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════ PAGE: ABOUT ═══════════════ -->
+<div class="page" id="page-about">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Our Story</div>
+      <h1>Built on <em>Purpose</em></h1>
+      <p>For over two decades, <span class="school-name-inline">Excellence Academy</span> has been a pillar of quality education in Nigeria — producing leaders, innovators, and compassionate citizens.</p>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="bg-alt">
+    <div class="inner grid-half reverse">
+      <div class="img-wrapper img-ratio-portrait">
+        <img src="https://images.unsplash.com/photo-1511629091441-ee46146481b6?auto=format&fit=crop&q=80&w=800" alt="Students collaborating" class="img-fluid" loading="lazy" />
+      </div>
+      <div>
+        <div class="section-tag">Mission & Vision</div>
+        <h2 class="section-title">Who We <em>Are</em></h2>
+        <p class="section-lead">Our foundation is built on three pillars: academic rigour, character formation, and community engagement.</p>
+
+        <div class="pillars" style="grid-template-columns: 1fr; gap: 24px;">
+          <div class="pillar" style="border-left: 4px solid var(--green);">
+            <h3>Our Mission</h3>
+            <p>To provide a stimulating, inclusive, and values-driven educational environment that empowers every student to discover their potential and become a positive force in society.</p>
+          </div>
+          <div class="pillar" style="border-left: 4px solid var(--gold);">
+            <h3>Our Vision</h3>
+            <p>To be the most trusted name in Nigerian school education — recognised for raising graduates who lead with knowledge, integrity, and purpose on the world stage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section>
+    <div class="inner text-center">
+      <div class="section-tag" style="justify-content:center;">Core Values</div>
+      <h2 class="section-title">What We <em>Stand For</em></h2>
+      <div class="pillars" style="margin-top: 48px;">
+        <div class="pillar">
+          <div class="pillar-icon" style="margin: 0 auto 24px;">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Integrity</h3>
+          <p>We instil honesty and ethical behaviour in everything — from examinations to daily conduct.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon" style="margin: 0 auto 24px;">
+            <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Respect</h3>
+          <p>Every student, teacher, and parent is treated with dignity. Mutual respect underpins our school culture.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon" style="margin: 0 auto 24px;">
+            <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3>Excellence</h3>
+          <p>We push for the highest standards — not just in grades, but in character, creativity, and contribution.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon" style="margin: 0 auto 24px;">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Community</h3>
+          <p>Strong families, active alumni, and engaged staff make our school an extended family and a place of belonging.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="bg-alt">
+    <div class="inner text-center">
+      <div class="section-tag" style="justify-content:center;">Leadership</div>
+      <h2 class="section-title">Our <em>Team</em></h2>
+      <p class="section-lead" style="margin: 0 auto 48px;">Passionate educators with decades of experience dedicated to your child's success.</p>
+      
+      <div class="card-grid inner-narrow">
+        <div class="pillar text-center" style="padding:48px 32px;">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Dr. Adaeze Okonkwo" class="profile-img" loading="lazy">
+          <h3>PRINCIPAL</h3>
+          <p>Ph.D in Educational Leadership. 20+ years transforming schools across Nigeria with visionary academic frameworks.</p>
+        </div>
+        <div class="pillar text-center" style="padding:48px 32px;">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Mr. Emeka Nwosu" class="profile-img" loading="lazy">
+          <h3>VICE-PRINCIPAL</h3>
+          <p>M.Ed in Curriculum Design. Specialist in science education, student welfare, and progressive pedagogy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo school-name-inline">Excellence Academy</div>
+          <p>Shaping Nigeria's next generation of leaders since our founding.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home" onclick="navigate('home')">Home</a></li>
+            <li><a href="#academics" onclick="navigate('academics')">Academics</a></li>
+            <li><a href="#admissions" onclick="navigate('admissions')">Apply</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year-about"></span> <span class="school-name-inline">Excellence Academy</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════ PAGE: ACADEMICS ═══════════════ -->
+<div class="page" id="page-academics">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Curriculum</div>
+      <h1>World-Class <em>Academics</em></h1>
+      <p>A comprehensive, forward-looking curriculum aligned with Nigerian educational standards and global best practices — from Nursery to Senior Secondary.</p>
+    </div>
+  </section>
+
+  <section class="bg-alt">
+    <div class="inner">
+      <div class="section-tag text-center" style="display:flex;justify-content:center;">School Levels</div>
+      <h2 class="section-title text-center">From <em>Nursery</em> to Senior Secondary</h2>
+
+      <div class="card-grid" style="margin-top: 64px;">
+        <!-- Level 1 -->
+        <div class="img-card">
+          <div class="img-wrapper img-ratio-landscape">
+            <img src="https://images.unsplash.com/photo-1564429238817-393bd4286b2d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nursery Kids" class="img-fluid" loading="lazy" />
+          </div>
+          <div class="img-card-body">
+            <h3>Early Years (Nursery)</h3>
+            <p>A play-based, nurturing environment for children aged 2–5. We build foundational literacy, numeracy, and social skills through structured play and discovery.</p>
+            <div class="tags">
+              <span class="tag">Ages 2–5</span>
+              <span class="tag">Play-Based</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Level 2 -->
+        <div class="img-card">
+          <div class="img-wrapper img-ratio-landscape">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="Primary School Students" class="img-fluid" loading="lazy" />
+          </div>
+          <div class="img-card-body">
+            <h3>Primary (Basic 1–6)</h3>
+            <p>Core literacy, numeracy, science, and social studies taught by specialist teachers. Strong emphasis on reading culture, problem-solving, and critical thinking.</p>
+            <div class="tags">
+              <span class="tag">Ages 6–11</span>
+              <span class="tag">NERDC Aligned</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="img-card">
+          <div class="img-wrapper img-ratio-landscape">
+            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80&w=800" alt="Junior Secondary" class="img-fluid" loading="lazy" />
+          </div>
+          <div class="img-card-body">
+            <h3>Junior Secondary (JSS)</h3>
+            <p>Broad-based education preparing students for specialisation. Students sit the Basic Education Certificate Examination (BECE) at the end of JSS 3.</p>
+            <div class="tags">
+              <span class="tag">Ages 11–14</span>
+              <span class="tag">BECE Prep</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 4 -->
+        <div class="img-card">
+          <div class="img-wrapper img-ratio-landscape">
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=800" alt="Senior Secondary" class="img-fluid" loading="lazy" />
+          </div>
+          <div class="img-card-body">
+            <h3>Senior Secondary (SSS)</h3>
+            <p>Rigorous preparation for WAEC, NECO, and UTME. Students choose from Science, Commercial, or Arts tracks. Our track record of A1–B2 grades is unmatched.</p>
+            <div class="tags">
+              <span class="tag">WAEC / NECO</span>
+              <span class="tag">JAMB Prep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="inner">
+      <div class="subjects">
+        <div class="section-tag">Subjects Offered</div>
+        <h2 class="section-title" style="font-size:2rem;">What We <em>Teach</em></h2>
+        <div class="subject-grid">
+          <div class="subject-item">Mathematics</div>
+          <div class="subject-item">English Language</div>
+          <div class="subject-item">Physics</div>
+          <div class="subject-item">Chemistry</div>
+          <div class="subject-item">Biology</div>
+          <div class="subject-item">Further Mathematics</div>
+          <div class="subject-item">Economics</div>
+          <div class="subject-item">Government</div>
+          <div class="subject-item">Literature</div>
+          <div class="subject-item">Commerce</div>
+          <div class="subject-item">Accounting</div>
+          <div class="subject-item">Computer Science</div>
+          <div class="subject-item">Agricultural Science</div>
+          <div class="subject-item">Civic Education</div>
+          <div class="subject-item">Fine Arts</div>
+          <div class="subject-item">French</div>
+          <div class="subject-item">Yoruba / Igbo / Hausa</div>
+          <div class="subject-item">CRS / IRS</div>
+        </div>
+      </div>
+
+      <!-- Extra-Curricular Image Block -->
+      <div class="accent-block" style="margin-top:80px; background-image: url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&q=80&w=1600');">
+        <div class="section-tag" style="color:var(--gold);margin-bottom:16px;">Beyond the Classroom</div>
+        <blockquote style="font-size:1.8rem; font-weight:700; font-style:normal; font-family:var(--font-display);">Sports · Drama · Debate · Science Club · ICT Club · Music · Scouting · Leadership Academy</blockquote>
+        <p style="margin-top:24px;font-size:1.1rem;color:rgba(255,255,255,0.9);">Every student is encouraged to find their passion and excel in it — inside and outside the classroom.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo school-name-inline">Excellence Academy</div>
+          <p>Rigorous academics, holistic development, enduring values.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home" onclick="navigate('home')">Home</a></li>
+            <li><a href="#admissions" onclick="navigate('admissions')">Apply Now</a></li>
+            <li><a href="#contact" onclick="navigate('contact')">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year-academics"></span> <span class="school-name-inline">Excellence Academy</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════ PAGE: ADMISSIONS ═══════════════ -->
+<div class="page" id="page-admissions">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Join Us</div>
+      <h1>Begin Your <em>Journey</em></h1>
+      <p>We warmly welcome applications for all levels. Admission into <span class="school-name-inline">Excellence Academy</span> is merit-based, and our team is here to guide you every step of the way.</p>
+    </div>
+  </section>
+
+  <section class="bg-alt">
+    <div class="inner grid-half">
+      <div>
+        <div class="section-tag">How to Apply</div>
+        <h2 class="section-title">The Admissions <em>Process</em></h2>
+
+        <div class="steps" style="margin-top: 40px;">
+          <div class="step done">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Pick Up Application Form</h3>
+              <p>Visit our school office or download the form online. Forms are available year-round. Obtain at the school secretariat or via the link below.</p>
+            </div>
+          </div>
+          <div class="step done">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Submit Completed Form</h3>
+              <p>Return the completed form with photocopies of last report card, birth certificate, and passport photographs. Pay the non-refundable application fee.</p>
+            </div>
+          </div>
+          <div class="step done">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Entrance Assessment</h3>
+              <p>Applicants for Primary 2 and above write a short entrance test in English, Mathematics, and General Knowledge.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h3>Offer Letter & Acceptance</h3>
+              <p>Successful candidates receive an offer letter within 5 working days. Acceptance is confirmed upon payment of the first-term school fees.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <a href="#contact" class="btn btn-green" onclick="navigate('contact')">Enquire About Admission →</a>
+        </div>
+      </div>
+      
+      <!-- Side Image for Admissions -->
+      <div class="img-wrapper img-ratio-portrait">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800" alt="Happy students" class="img-fluid" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="inner text-center">
+      <div class="section-tag" style="justify-content:center;">School Fees</div>
+      <h2 class="section-title">Transparent <em>Pricing</em></h2>
+      <p class="section-lead" style="margin: 0 auto;">Our fees are competitive and represent outstanding value for the quality of education we provide. Payment plans are available.</p>
+
+      <div class="fees-grid text-left">
+        <div class="fee-card">
+          <div class="fee-level">Early Years / Nursery</div>
+          <div class="fee-amount">₦180,000</div>
+          <div class="fee-period">per term</div>
+          <ul class="fee-includes">
+            <li>All tuition & learning materials</li>
+            <li>Daily feeding programme</li>
+            <li>Extra-curricular activities</li>
+            <li>Parent-teacher reports</li>
+          </ul>
+        </div>
+        <div class="fee-card">
+          <div class="fee-level">Primary (Basic 1–6)</div>
+          <div class="fee-amount">₦230,000</div>
+          <div class="fee-period">per term</div>
+          <ul class="fee-includes">
+            <li>All tuition & textbooks</li>
+            <li>Computer lab access</li>
+            <li>Sports & clubs</li>
+            <li>Midterm progress report</li>
+          </ul>
+        </div>
+        <div class="fee-card featured">
+          <div class="fee-level">Junior Secondary</div>
+          <div class="fee-amount">₦290,000</div>
+          <div class="fee-period">per term</div>
+          <ul class="fee-includes">
+            <li>All tuition & past questions</li>
+            <li>Science lab practicals</li>
+            <li>BECE preparation classes</li>
+            <li>Leadership development</li>
+          </ul>
+        </div>
+        <div class="fee-card">
+          <div class="fee-level">Senior Secondary</div>
+          <div class="fee-amount">₦340,000</div>
+          <div class="fee-period">per term</div>
+          <ul class="fee-includes">
+            <li>All tuition & exam fees</li>
+            <li>WAEC / NECO registration</li>
+            <li>JAMB UTME coaching</li>
+            <li>University application guidance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accent-block" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1600'); padding: 64px 40px; margin-top: 64px;">
+        <h3 style="font-family:var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 16px;">Need a Payment Plan?</h3>
+        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 32px; max-width: 600px; margin-inline: auto;">We offer flexible instalment options so financial constraints never stand between a child and quality education. Contact our admissions office to learn more.</p>
+        <a href="#contact" class="btn btn-white" onclick="navigate('contact')">Talk to Admissions</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo school-name-inline">Excellence Academy</div>
+          <p>Investing in your child's future starts with the right school.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home" onclick="navigate('home')">Home</a></li>
+            <li><a href="#academics" onclick="navigate('academics')">Academics</a></li>
+            <li><a href="#contact" onclick="navigate('contact')">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year-admissions"></span> <span class="school-name-inline">Excellence Academy</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════ PAGE: CONTACT ═══════════════ -->
+<div class="page" id="page-contact">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Get in Touch</div>
+      <h1>We'd Love to <em>Hear</em> from You</h1>
+      <p>Whether you're a prospective parent, current student, or community partner — our doors (and phone lines) are always open.</p>
+    </div>
+  </section>
+
+  <section class="bg-alt">
+    <div class="inner grid-half">
+      <div class="contact-info-card">
+        <div class="section-tag" style="margin-bottom:24px;">Contact Details</div>
+        <h2 class="section-title" style="font-size: 2.2rem;">Find <em>Us</em></h2>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value school-address">12 Education Crescent, GRA Phase 2, Nigeria</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value"><a href="tel:+2348012345678" style="color:inherit;text-decoration:none;">+234 801 234 5678</a><br/><a href="tel:+2348098765432" style="color:inherit;text-decoration:none;">+234 809 876 5432</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:info@school.edu.ng" style="color:inherit;text-decoration:none;">info@school.edu.ng</a><br/><a href="mailto:admissions@school.edu.ng" style="color:inherit;text-decoration:none;">admissions@school.edu.ng</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="img-wrapper img-ratio-landscape" style="box-shadow: var(--shadow-md);">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800" alt="School Campus Map view" class="img-fluid" loading="lazy">
+        </div>
+        <div style="margin-top: 24px; text-align: center;">
+          <a href="https://maps.google.com/?q=Port+Harcourt+Rivers+State+Nigeria" target="_blank" class="btn btn-outline-green" style="width: 100%;">Open in Google Maps</a>
+        </div>
+
+        <div class="accent-block" style="margin-top:32px;padding:40px;background-image:none;background-color:var(--green);">
+          <div class="section-tag" style="color:var(--gold);margin-bottom:16px;justify-content:center;">Direct Support</div>
+          <h3 style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:12px;">WhatsApp Admissions</h3>
+          <p style="font-size:1rem;color:rgba(255,255,255,0.9);line-height:1.6;margin-bottom:24px;">For fastest response, WhatsApp or call our admissions line directly.</p>
+          <a href="https://wa.me/2348012345678" target="_blank" class="btn btn-white" style="width: 100%;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Chat with Us Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="inner text-center">
+      <div class="section-tag" style="justify-content:center;">FAQs</div>
+      <h2 class="section-title">Common <em>Questions</em></h2>
+      <div class="card-grid text-left" style="margin-top: 48px;">
+        <div class="pillar" style="padding: 32px;">
+          <h3 style="font-size:1.3rem;margin-bottom:12px;">When does the school year start?</h3>
+          <p style="font-size:1rem;">The academic year follows the Nigerian school calendar: First Term (September–December), Second Term (January–March), Third Term (April–July). Exact resumption dates are communicated via circulars.</p>
+        </div>
+        <div class="pillar" style="padding: 32px;">
+          <h3 style="font-size:1.3rem;margin-bottom:12px;">Do you offer bus services?</h3>
+          <p style="font-size:1rem;">Yes. We operate school buses covering major routes across Port Harcourt. A separate transport levy is charged per term. Please contact us for current routes and availability.</p>
+        </div>
+        <div class="pillar" style="padding: 32px;">
+          <h3 style="font-size:1.3rem;margin-bottom:12px;">Is there a feeding programme?</h3>
+          <p style="font-size:1rem;">Nutritious hot meals are provided daily for Early Years and Nursery pupils. Optional feeding plans are available for Primary and Secondary students at an additional cost.</p>
+        </div>
+        <div class="pillar" style="padding: 32px;">
+          <h3 style="font-size:1.3rem;margin-bottom:12px;">Are scholarships available?</h3>
+          <p style="font-size:1rem;">We award merit-based scholarships to top-performing students at the end of each academic year. Partial fee waivers are also available for exceptional cases. Contact admissions for details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo school-name-inline">Excellence Academy</div>
+          <p>12 Education Crescent, GRA Phase 2, Port Harcourt, Rivers State, Nigeria.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home" onclick="navigate('home')">Home</a></li>
+            <li><a href="#about" onclick="navigate('about')">About</a></li>
+            <li><a href="#academics" onclick="navigate('academics')">Academics</a></li>
+            <li><a href="#admissions" onclick="navigate('admissions')">Admissions</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+2348012345678">+234 801 234 5678</a></li>
+            <li><a href="mailto:info@school.edu.ng">info@school.edu.ng</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year-contact"></span> <span class="school-name-inline">Excellence Academy</span>. All rights reserved. | Nigeria</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+
+<script>
+  // ─── CONFIG ─────────────────────────────────────────
+  const FALLBACK_NAME = 'Excellence Academy';
+
+  // ─── HELPERS ────────────────────────────────────────
+  function getAcronym(name) {
+    return name.split(/\s+/).map(w => w[0]).join('').toUpperCase();
+  }
+
+  function smartName(name) {
+    if (!name) return FALLBACK_NAME;
+    if (name.length <= 25) return name;
+    // Try acronym if many words
+    const words = name.trim().split(/\s+/);
+    if (words.length >= 3) return getAcronym(name);
+    // Otherwise truncate
+    return name.substring(0, 22).trimEnd() + '…';
+  }
+
+  function applySchoolName(fullName) {
+    const display = fullName || FALLBACK_NAME;
+    const navDisplay = smartName(display);
+
+    // Nav
+    document.getElementById('nav-school-name').textContent = navDisplay;
+
+    // All inline name spans (content)
+    document.querySelectorAll('.school-name-inline').forEach(el => {
+      el.textContent = display;
+    });
+
+    // Meta & title
+    document.getElementById('meta-title').textContent = `${display} — Shaping Tomorrow's Leaders`;
+    document.getElementById('meta-desc').setAttribute('content', `${display} is a premier Nigerian school dedicated to academic excellence, character development, and holistic education.`);
+    document.title = `${display} — Shaping Tomorrow's Leaders`;
+
+    // Year spans
+    const yr = new Date().getFullYear();
+    document.querySelectorAll('[id^="year-"]').forEach(el => el.textContent = yr);
+  }
+
+  // ─── ROUTING ────────────────────────────────────────
+  const PAGES = ['home', 'about', 'academics', 'admissions', 'contact'];
+
+  function navigate(page) {
+    if (!PAGES.includes(page)) page = 'home';
+
+    // Update active page
+    document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+    const target = document.getElementById(`page-${page}`);
+    if (target) {
+      target.classList.add('active');
+      // Force animation replay
+      target.style.animation = 'none';
+      target.offsetHeight; // reflow
+      target.style.animation = '';
+    }
+
+    // Update hash
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const newHash = id ? `#${page}?id=${id}` : `#${page}`;
+    history.replaceState(null, '', window.location.pathname + window.location.search + `#${page}`);
+
+    // Update nav active states
+    document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === `#${page}`);
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function getPageFromHash() {
+    const hash = window.location.hash.replace('#', '').split('?')[0];
+    return PAGES.includes(hash) ? hash : 'home';
+  }
+
+  // ─── MOBILE MENU ────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  window.closeMobileMenu = function() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  };
+
+  // Close on outside tap
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+
+  // ─── INIT ────────────────────────────────────────────
+  function init() {
+    const loadingOverlay = document.getElementById('loading-overlay');
+
+    const queryParams = new URLSearchParams(window.location.search);
+    const businessName = queryParams.get('name');
+
+    if (businessName) {
+      applySchoolName(businessName);
+    } else {
+      applySchoolName(FALLBACK_NAME);
+    }
+
+    // Navigate to page based on hash
+    const page = getPageFromHash();
+    navigate(page);
+
+    // Hide loader
+    loadingOverlay.classList.add('hidden');
+    setTimeout(() => loadingOverlay.style.display = 'none', 400);
+  }
+
+  // Handle browser back/forward
+  window.addEventListener('hashchange', () => {
+    navigate(getPageFromHash());
+  });
+
+  // Kick off
+  init();
+</script>
+</body>
+</html>
